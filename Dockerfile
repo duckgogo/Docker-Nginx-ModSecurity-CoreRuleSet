@@ -36,7 +36,7 @@ RUN apk update --no-cache \
     && rm -f nginx-${NGINX_VERSION}.tar.gz \
     && rm -rf nginx-${NGINX_VERSION} \
     # Clean
-    && apk del --no-cache linux-headers file make gawk g++ pkgconf libtool pcre-dev zlib-dev curl-dev openssl-dev geoip-dev lmdb-dev pcre-dev libxml2-dev
+    && apk del --no-cache linux-headers file make gawk g++ pkgconf
 COPY nginx/ /etc/nginx
 RUN sed -i "s|&CRS_VERSION&|${CRS_VERSION}|g" /etc/nginx/modsec/main.conf \
     && cp /usr/local/modsecurity-v${MODSEC_VERSION}/unicode.mapping /etc/nginx/modsec/
