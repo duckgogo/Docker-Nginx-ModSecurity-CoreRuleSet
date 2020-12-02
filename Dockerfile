@@ -13,6 +13,7 @@ RUN apk update --no-cache \
     && ./configure \
     && make \
     && make install \
+    && make clean \
     && cd .. \
     && rm -f modsecurity-v${MODSEC_VERSION}.tar.gz \
     # Download OWASP Core Rule Set
